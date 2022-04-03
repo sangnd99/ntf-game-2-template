@@ -1,0 +1,59 @@
+/* screen resolution */
+$mobile: 600px;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1270px;
+
+@mixin responsive($size) {
+  @if $size == mobile {
+    @media only screen and (max-width: $mobile) {
+      @content;
+    }
+  } @else if $size == tablet {
+    @media only screen and (max-width: $tablet) {
+      @content;
+    }
+  } @else if $size == laptop {
+    @media only screen and (max-width: $laptop) {
+      @content;
+    }
+  } @else if $size == desktop {
+    @media only screen and (max-width: $desktop) {
+      @content;
+    }
+  }
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin positionCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin round($width) {
+  width: $width;
+  height: $width;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+@mixin gridCols($col) {
+  grid-template-columns: repeat($col, minmax(0, 1fr));
+}
+
+@mixin gridRows($row) {
+  grid-template-rows: repeat($row, minmax(0, 1fr));
+}
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

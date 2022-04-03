@@ -1,0 +1,56 @@
+:root {
+  --card-backup: #0344ff;
+  --card-gradient: radial-gradient(
+    54.94% 46.19% at 50% 50%,
+    #0344ff 0%,
+    #1f29c5 100%
+  );
+  --button-primary-backup: #af590b;
+  --button-primary-gradient: linear-gradient(
+    90deg,
+    #af590b 0%,
+    #fb7700 104.55%
+  );
+  --button-secondary-backup: rgb(32, 88, 242);
+  --button-secondary-gradient: linear-gradient(
+    90deg,
+    rgba(32, 88, 242, 1) 0%,
+    rgba(126, 60, 219, 1) 55%,
+    rgba(186, 0, 144, 1) 90%,
+    rgba(189, 0, 128, 1) 100%
+  );
+  --text-highlight-backup: #0576f6;
+  --text-highlight-gradient: linear-gradient(
+    90deg,
+    rgba(0, 194, 242, 0) 1.1%,
+    #0576f6 51.22%,
+    rgba(3, 68, 255, 0) 96.37%
+  );
+  --background: #011358;
+  --white: #ffffff;
+  // text size
+  --text-xs: 16px;
+  --text-sm: 18px;
+  --text-md: 20px;
+  --text-lg: 22px;
+  --text-xl: 24px;
+  --text-2xl: 36px;
+  --text-3xl: 48px;
+  --text-4xl: 64px;
+  // others
+  --button-border-radius: 16px;
+  --container: 1100px;
+}
+
+@media all and (max-width: 600px) {
+  :root {
+    --text-xs: 14px;
+    --text-sm: 16px;
+    --text-md: 18px;
+    --text-lg: 20px;
+    --text-xl: 22px;
+    --text-2xl: 32px;
+    --text-3xl: 44px;
+    --text-4xl: 50px;
+  }
+}

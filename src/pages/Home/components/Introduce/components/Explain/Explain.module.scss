@@ -1,0 +1,73 @@
+@use "mixin" as *;
+
+.wrapper {
+  position: absolute;
+  bottom: var(--bottom);
+  z-index: 99999;
+  width: 100%;
+  @include center;
+}
+
+.container {
+  $round: 27px;
+
+  width: var(--container);
+  color: var(--white);
+  background: var(--section-background);
+  background-size: cover;
+  background-position: right;
+  display: grid;
+  @include gridCols(2);
+  border-radius: $round;
+  padding: 50px 70px;
+  filter: drop-shadow(0px 10px 20px rgba(0, 194, 242, 0.5));
+  @include responsive(laptop) {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 30px;
+    width: 100%;
+    position: static;
+    transform: translateX(0);
+    border-radius: 0;
+    padding: 50px 15px;
+  }
+}
+
+.left-section {
+  &__title {
+    font-size: var(--text-2xl);
+    margin-bottom: 30px;
+  }
+  &__desc {
+    font-size: var(--text-sm);
+    line-height: 1.7;
+  }
+}
+
+.right-section {
+  display: grid;
+  @include gridCols(2);
+  place-content: space-around;
+  place-items: end;
+  &__type {
+    $padding: 5px;
+    $round: 15px;
+
+    @include center;
+    font-size: var(--text-xl);
+    font-weight: bold;
+    width: 180px;
+    height: max-content;
+    padding-top: $padding;
+    padding-bottom: $padding;
+    border-radius: $round;
+    background: var(--button-secondary-backup);
+    background: var(--button-secondary-gradient);
+    @include responsive(laptop) {
+      width: 100%;
+    }
+  }
+  @include responsive(laptop) {
+    gap: 15px;
+  }
+}
