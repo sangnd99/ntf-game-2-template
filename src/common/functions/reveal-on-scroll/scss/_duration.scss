@@ -1,0 +1,5 @@
+@for $i from 1 to 60 {
+  [data-ros][data-ros-duration="#{$i * 50}"] {
+    transition-duration: #{$i * 50}ms;
+  }
+}

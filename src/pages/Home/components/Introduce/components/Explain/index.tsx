@@ -19,7 +19,8 @@ const Explain: React.FC<IExplainProps> = () => {
     <div
       className={styles.wrapper}
       style={{ ...cssVariables }}
-      data-aos="fade-up"
+      data-ros="fade-up"
+      data-ros-duration="500"
     >
       <div
         style={{ ...cssVariables }}

@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 
 import "assets/scss/globals.scss";
+import "common/functions/reveal-on-scroll/scss/ros.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 

@@ -1,0 +1,14 @@
+$ros-distance: 100px !default;
+
+[data-ros^="fade"][data-ros^="fade"] {
+  opacity: 0;
+  transition-property: opacity, transform;
+  &.ros-active {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+[data-ros="fade-up"] {
+  transform: translate3d(0, $ros-distance, 0);
+}
