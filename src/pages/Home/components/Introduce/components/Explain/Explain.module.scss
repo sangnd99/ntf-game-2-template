@@ -3,7 +3,7 @@
 .wrapper {
   position: absolute;
   bottom: var(--bottom);
-  z-index: 99999;
+  z-index: 99;
   width: 100%;
   @include center;
 }

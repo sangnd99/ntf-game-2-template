@@ -6,7 +6,7 @@ import Router from "routes";
 
 const App = () => {
   useEffect(() => {
-    revealOnScroll();
+    revealOnScroll({ threshold: 0.5 });
   }, []);
   return (
     <BrowserRouter>

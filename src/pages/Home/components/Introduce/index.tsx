@@ -1,16 +1,19 @@
 import cn from "classnames";
 
 import styles from "./Introduce.module.scss";
-import { useScrollOffset } from "common/hooks";
+import { pageYOffset } from "common/functions";
 
 import { AppStore, GGPlay } from "assets/svg/common";
 import { Background, Object, Rock, Rock1, Rock2 } from "assets/images/parallax";
 import Explain from "./components/Explain";
+import { useEffect } from "react";
 
 interface IIntroduceProps {}
 
 const Introduce: React.FC<IIntroduceProps> = (props) => {
-  const offset = useScrollOffset();
+  useEffect(() => {
+    pageYOffset();
+  }, []);
   return (
     <div>
       <div className={styles.container}>
@@ -44,16 +47,12 @@ const Introduce: React.FC<IIntroduceProps> = (props) => {
           </div>
         </div>
         <div className={styles["parallax-container"]}>
-          <picture>
-            <source media="(max-width: 600px)" srcSet={Background} />
-            <img
-              src={Background}
-              className={styles.backgound}
-              alt="Parallax background"
-              style={{ transform: `translateY(${offset * 0.5}px)` }}
-              draggable={false}
-            />
-          </picture>
+          <img
+            src={Background}
+            className={styles.background}
+            alt="Parallax background"
+            draggable={false}
+          />
           <img
             src={Object}
             className={styles.object}
@@ -65,14 +64,12 @@ const Introduce: React.FC<IIntroduceProps> = (props) => {
             className={styles.rock}
             alt="Parallax object"
             width={80}
-            style={{ transform: `translateY(${offset * 0.3}px)` }}
             draggable={false}
           />
           <img
             src={Rock1}
             className={styles["rock-1"]}
             alt="Parallax object"
-            style={{ transform: `translateY(${offset * 0.4}px)` }}
             draggable={false}
           />
           <img
@@ -80,7 +77,6 @@ const Introduce: React.FC<IIntroduceProps> = (props) => {
             className={styles["rock-2"]}
             alt="Parallax object"
             width={400}
-            style={{ transform: `translateY(${offset * 0.2}px)` }}
             draggable={false}
           />
         </div>

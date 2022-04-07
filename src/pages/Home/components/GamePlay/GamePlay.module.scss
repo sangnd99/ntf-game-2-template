@@ -1,0 +1,112 @@
+@use "mixin" as *;
+
+.wrapper {
+  position: relative;
+  background: var(--game-play-background);
+  background-size: cover;
+  padding: 300px 0 70px 0;
+  @include responsive(tablet) {
+    padding: 350px 0 70px 0;
+  }
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to bottom, #011358, transparent);
+    z-index: 10;
+  }
+  &::before {
+    top: -2px;
+  }
+  &::after {
+    bottom: -50px;
+  }
+}
+
+.container {
+  color: var(--white);
+}
+
+.title {
+  font-size: var(--text-3xl);
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.type {
+  display: grid;
+  @include gridCols(2);
+  overflow-x: hidden;
+  gap: 20px;
+  @include responsive(tablet) {
+    @include gridCols(1);
+    margin-bottom: 50px;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    font-size: var(--text-2xl);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    background: var(--text-backup);
+    background: var(--text-gradient);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  &__item {
+    padding: 10px 0 10px 50px;
+    font-size: var(--text-xs);
+    @include responsive(tablet) {
+      text-align: center;
+      padding: 10px 0 10px 0;
+    }
+    &:nth-child(odd) {
+      background: var(--text-highlight-backup);
+      background: var(--text-highlight-gradient);
+    }
+  }
+}
+
+.food-manufacture {
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+  gap: 10px;
+  @include responsive(tablet) {
+    padding-left: 0;
+  }
+  &__container {
+    display: grid;
+    @include gridCols(2);
+    gap: 75px;
+    @include responsive(tablet) {
+      @include gridCols(1);
+      gap: 20px;
+    }
+  }
+  &__title {
+    font-size: var(--text-2xl);
+    font-weight: bold;
+  }
+  &__text {
+    font-size: var(--text-xs);
+    font-style: italic;
+    line-height: 2;
+    & p {
+      line-height: 2;
+    }
+  }
+}
+
+.note {
+  font-size: var(--text-xs);
+  font-style: italic;
+  line-height: 2;
+}

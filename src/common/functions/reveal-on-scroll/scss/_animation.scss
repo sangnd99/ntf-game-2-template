@@ -12,3 +12,11 @@ $ros-distance: 100px !default;
 [data-ros="fade-up"] {
   transform: translate3d(0, $ros-distance, 0);
 }
+
+[data-ros="fade-right"] {
+  transform: translate3d(-$ros-distance, 0, 0);
+}
+
+[data-ros="fade-left"] {
+  transform: translate3d($ros-distance, 0, 0);
+}

@@ -35,7 +35,7 @@ const Footer: React.FC<IFooterProps> = () => {
             <a href="#">Contact us</a>
           </div>
         </li>
-        <li>
+        <li className={styles["item__wrapper"]}>
           <p className={styles["item__title"]}>Community</p>
           <div className={styles["item__contact"]}>
             {listContact.map(({ name, link, icon }) => (

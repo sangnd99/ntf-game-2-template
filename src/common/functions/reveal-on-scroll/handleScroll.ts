@@ -1,11 +1,14 @@
+import type { IOptions } from "./index";
+import { offset } from "./offset";
+
 export const handeScroll = (
   rosElement: NodeListOf<HTMLElement>,
-  threshold: number,
+  options: IOptions,
 ) => {
   const scrollTop = window.pageYOffset;
   rosElement.forEach((element) => {
     const elementPosition =
-      element.offsetTop + element.clientHeight * threshold;
+      offset(element) + element.clientHeight * options.threshold;
     if (elementPosition < window.innerHeight + scrollTop) {
       element.classList.add("ros-active");
     } else {
